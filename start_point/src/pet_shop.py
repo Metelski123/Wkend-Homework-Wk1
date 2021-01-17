@@ -26,3 +26,38 @@ def get_pets_by_breed(pet_shop, breed):
         if pet["breed"] == breed:
             pet_search.append(pet)
     return pet_search
+
+def find_pet_by_name(pet_shop, name):
+    for pet in pet_shop["pets"]:
+        if pet["name"] == name:
+            return pet
+
+
+def remove_pet_by_name(pet_shop, name):
+    for pet in pet_shop["pets"]:
+        if pet["name"] == name:
+            pet_to_remove = pet
+    pet_shop["pets"].remove(pet_to_remove)
+
+
+def add_pet_to_stock(pet_shop, new_pet_add):
+    new_pet_to_add = new_pet_add
+    pet_shop["pets"].append(new_pet_to_add)
+
+def get_customer_cash(customer):
+    return customer["cash"]
+
+
+def remove_customer_cash(customer, cash_rem):
+    customer["cash"] -= cash_rem
+    return customer["cash"]
+
+
+def get_customer_pet_count(customer):
+    customer_pets = customer["pets"]
+    return len(customer_pets)
+
+
+def add_pet_to_customer(customer, new_pet_add):
+    new_pet_to_add = new_pet_add
+    customer["pets"].append(new_pet_to_add)
